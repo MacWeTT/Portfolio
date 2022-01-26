@@ -14,5 +14,3 @@ function alertmsg(){
   }
   document.getElementById("feedbackresult").innerHTML = txt;
 }
-
-
