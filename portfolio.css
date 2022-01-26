@@ -5,21 +5,59 @@
     list-style: none;
 }
 
+body.dark{
+    background-color: #292c35;
+    color: white;
+}
+
+
+body{
+    transition: background 0.2s linear;
+}
+
 html{
     font-size: 24px;
 }
 
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 nav{
-    height: 13vh;
+    height: 12vh;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
     width: 100%;
+    opacity: 0.6;
     background-color: #e5e5e5;
     display: flex;
-    justify-content: end;
+}
+
+.checkbox{
+    float: left;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    opacity: 0;
+}
+
+.dm{
+    color: black;
+    transition: 0.3s;
+    font-size: 18px;
+    padding: 1vw;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 1vw ;
+}
+
+.dm:hover{
+    background-color: whitesmoke;
+    transition: .5s;
 }
 
 .logo{
     font-size: 35px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     color: black;
     padding: 0 7vw;
@@ -28,8 +66,7 @@ nav{
 
 .navitems{
     float: right;
-    margin-right: 4vw;
-
+    margin-left: 40vw;
 }
 
 .navitem{
@@ -40,7 +77,7 @@ nav{
 
 nav a{
     color: black;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.3s;
     font-size: 18px;
     padding: 1vw;
     text-transform: uppercase;
@@ -48,7 +85,7 @@ nav a{
     border-radius: 3px;
 }
 
-a.active,a:hover{
+a:hover{
     border: 1px solid black;
     transition: .5s;
 }
@@ -58,56 +95,10 @@ nav #icon{
     font-size: 30px;
     line-height: 80px;
     float: right;
-    margin-right: 40px;
+    margin-right: 25px;
     cursor: pointer;
 
 }
-
-
-/* 
-@media (max-width:1048px){
-    label.logo{
-        font-size: 32px;
-        padding-left: 60px;
-    }
-    nav ul{
-        margin-right: 20px;
-    }
-    nav a{
-        font-size: 17px;
-    }
-}
-
-@media(max-width:909px){
-    nav #icon{
-        display: block;
-    }
-    nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: #464646;
-        top: 80px;
-        left: -100%;
-        transition: all .5s;
-        text-align: center;
-    }
-    nav li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px; 
-    }
-    nav a{
-        font-size: 20px;
-    }
-    a.active,a:hover{
-        border: none;
-        color: #969696;
-    }
-    nav ul.show{
-        left: 0;
-    }
-} */
 
 .container{
     display: flex;
@@ -119,11 +110,11 @@ nav #icon{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 12vh;
+    padding-top: 15vh;
 }
 .right-side{
     background-color: #e5e5e5;
-    width: 70%;
+    width: 100%;
 }
 
 .content{
@@ -137,6 +128,24 @@ nav #icon{
     font-size: 0.7rem;
 }
 
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
 .socials{
     display: flex;
     gap: 2vw;
@@ -146,29 +155,63 @@ nav #icon{
 }
 
 .hire-btn{
+    color: inherit;
+    text-decoration: none;
     background-color: #ce1c1c;
     padding: 2vh 3vw;
     transition: .5s;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+    cursor: pointer;
+
 }
 
 .hire-btn:hover{
     background-color: #31e3e3;
     padding: 2vh 3vw;
     transition: .5s;
+    border: 1px transparent;
 }
-.viewbtn{
+.dropbtn{
     background-color: white;
     border: 1px solid black;
     padding: 2vh 3vw;
     transition: .5s;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+ 
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-.viewbtn:hover{
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+.dropbtn:hover{
     background-color: black;
     padding: 2vh 3vw;
     transition: .5s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 .text-1{
     font-size: 2rem;
@@ -207,29 +250,34 @@ nav #icon{
 
 .ornament-2{
     position: absolute;
-    left: 53%;
+    left: 45%;
     top: 70%;
 }
 
 .ornament-3{
     position: absolute;
     left: 0%;
-    top: 105%;
+    top: 5%;
 }
 .ornament-4{
     position: absolute;
     left: 32%;
-    top: 165%;
+    top: 65%;
 }
 .ornament-5{
     position: absolute;
     left: 5%;
-    top: 440%;
+    top: 450%;
 }
 
 .about{
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+#about{
+    transition: 0.4s ease-in-out;
 }
 
 .photocover{
@@ -251,7 +299,6 @@ nav #icon{
     height: 33%;
     width: 13%;
     left: 0%;
-    top: 100%;
 }
 .info{
     width: 40%;
@@ -275,10 +322,9 @@ nav #icon{
 .number{
     font-size: 50px;
     padding-right: 1vw;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .numberdetail{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 42px;
 }
 
@@ -303,7 +349,6 @@ nav #icon{
     display: flex;
     font-size: 42px;
     padding-bottom: 2vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .headingc-u{
     align-items: center;
@@ -447,9 +492,6 @@ nav #icon{
     font-size: 14px;
     padding-right: 1vw;
 }
-
-
-
 .contact{
     display: flex;
     margin-right: 50vw;
@@ -469,7 +511,6 @@ nav #icon{
 }
 
 .formhead{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     padding-bottom: 2vh;
     padding-top: 2vh;
@@ -503,7 +544,7 @@ textarea {
 
 .sendmsg{
     background-color: #ce1c1c;
-    padding: 1vh;
+    padding: 2vh;
     margin-top: 2vh;
     margin-left: 6vw;
     margin-right: 1vw;
@@ -512,12 +553,13 @@ textarea {
     display: flex;
     justify-content: center;
     transition: .5s;
+    border: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .sendmsg:hover{
     background-color: #31e3e3;
-    padding: 1vh;
+    padding: 2vh;
     margin-top: 2vh;
     margin-left: 6vw;
     width: 13vw;
@@ -526,32 +568,22 @@ textarea {
 }
 
 
+.hire-btn{
+    color: inherit;
+    text-decoration: none;
+    background-color: #ce1c1c;
+    padding: 2vh 3vw;
+    transition: .5s;
+    border: none;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.hire-btn:hover{
+    background-color: #31e3e3;
+    padding: 2vh 3vw;
+    transition: .5s;
+    border: 1px transparent;
+}
 
 .footer{
     background-color: #e5e5e5;
@@ -562,12 +594,41 @@ textarea {
     display: flex;
     justify-content: center;
     gap: 2vw;
+    font-size: 1.5rem;
+}
+
+.socialstop{
+    display: flex;
+    gap: 2vw;
+    font-size: 1.5rem;
+}
+
+#sociallink{
+    border: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gototop a{
+    color: black;
+    transition: 0.3s;
+    font-size: 18px;
+    padding: 1vw;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-left: 29vw;
+    margin-right: 5vw;
+}
+
+.gototop a:hover{
+    border: 1px solid black;
+    transition: .5s;
 }
 
 .footercontent{
     padding-top: 5vh;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
     display: flex;
 }
 .copyright{
@@ -575,5 +636,4 @@ textarea {
     justify-content: center;
     align-items: center;
     display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
