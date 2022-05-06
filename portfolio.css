@@ -13,12 +13,13 @@ body.dark{
 
 body{
     transition: background 0.2s linear;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html{
     font-size: 24px;
     scroll-behavior: smooth;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 nav{
     box-shadow: 0px 5px 10px 0px #aaa;
@@ -27,16 +28,29 @@ nav{
     opacity: 0.6;
     background-color: #e5e5e5;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     z-index: 10;
 }
-
-.checkbox{
-    float: left;
-    margin-top: 5vh;
-    margin-left: 3vw;
-    opacity: 0;
+.Title{
+    margin: 0 1vw;    
 }
-
+/* .Title{
+    display: inline-block;
+    margin: 0 1vw;
+    line-height: 80px;
+    color: black;
+    transition: 0.3s;
+    font-size: 18px;
+    padding: 1vw;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 3px; 
+}
+/* .Title:hover{
+    border: 1px solid black;
+    transition: .5s;
+} */ */
 .dm{
     color: black;
     transition: 0.3s;
@@ -45,7 +59,6 @@ nav{
     text-transform: uppercase;
     border: 1px solid black;
     border-radius: 3px;
-    margin-top: 1vw ;
 }
 
 .dm:hover{
@@ -62,8 +75,8 @@ nav{
 }
 
 .navitems{
-    float: right;
-    margin-left: 40vw;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navitem{
